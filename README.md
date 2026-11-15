@@ -1,6 +1,6 @@
 # Awesome-External-Web-Services-API-Connectors
 
-# Top External Web Services & API Connectors Ecosystem
+## Top External Web Services & API Connectors Ecosystem
 
 **Curated List of SaaS Platforms & Open-Source GitHub Projects**  
 *Focused on iPaaS Orchestration, API Client Workflows & Self-Hosted Connector Gateways*  
