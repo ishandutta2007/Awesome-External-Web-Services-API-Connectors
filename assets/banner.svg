@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d17" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <linearGradient id="accent-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="text-title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Glowing Orbs Filters -->
+    <filter id="blur-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60" result="blur" />
+    </filter>
+    <filter id="node-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyber-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.4" />
+    </pattern>
+  </defs>
+
+  <style>
+    .node-pulse {
+      animation: pulse 3s ease-in-out infinite alternate;
+    }
+    .flow-dash {
+      stroke-dasharray: 8, 8;
+      animation: dashMove 20s linear infinite;
+    }
+    .flow-dash-reverse {
+      stroke-dasharray: 6, 6;
+      animation: dashMoveRev 15s linear infinite;
+    }
+    .orb-float-1 {
+      animation: floatOrb1 10s ease-in-out infinite alternate;
+    }
+    .orb-float-2 {
+      animation: floatOrb2 12s ease-in-out infinite alternate;
+    }
+    @keyframes dashMove {
+      from { stroke-dashoffset: 400; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes dashMoveRev {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: 300; }
+    }
+    @keyframes floatOrb1 {
+      0% { transform: translate(0px, 0px); }
+      100% { transform: translate(60px, 40px); }
+    }
+    @keyframes floatOrb2 {
+      0% { transform: translate(0px, 0px); }
+      100% { transform: translate(-50px, -30px); }
+    }
+    @keyframes pulse {
+      0% { r: 6px; opacity: 0.7; }
+      100% { r: 10px; opacity: 1; }
+    }
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .subtitle-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+    }
+    .pill-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+    }
+  </style>
+
+  <!-- 1. Background Rectangle -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" />
+
+  <!-- 2. Animated Ambient Glowing Orbs in Background -->
+  <g opacity="0.35">
+    <circle class="orb-float-1" cx="200" cy="120" r="140" fill="#0284c7" filter="url(#blur-glow)" />
+    <circle class="orb-float-2" cx="1020" cy="300" r="160" fill="#7c3aed" filter="url(#blur-glow)" />
+    <circle class="orb-float-1" cx="850" cy="80" r="110" fill="#059669" filter="url(#blur-glow)" />
+  </g>
+
+  <!-- 3. Perspective Grid Overlay -->
+  <rect width="1200" height="420" fill="url(#cyber-grid)" />
+
+  <!-- 4. Dynamic API Flow / Connector Circuit Graphic (Background/Midground) -->
+  <g opacity="0.45">
+    <!-- Curved API Data Pipelines -->
+    <path class="flow-dash" d="M -50 320 C 250 280, 350 380, 600 320 S 950 240, 1250 310" fill="none" stroke="#0ea5e9" stroke-width="2.5" />
+    <path class="flow-dash-reverse" d="M -50 100 C 300 180, 400 40, 700 120 S 1000 60, 1250 140" fill="none" stroke="#a855f7" stroke-width="2" />
+    <path class="flow-dash" d="M 100 450 C 300 320, 500 420, 750 300 S 1100 350, 1250 180" fill="none" stroke="#10b981" stroke-width="1.8" />
+
+    <!-- Circuit Connection Nodes -->
+    <g filter="url(#node-glow)">
+      <circle class="node-pulse" cx="160" cy="305" r="7" fill="#38bdf8" />
+      <circle class="node-pulse" cx="350" cy="355" r="6" fill="#818cf8" />
+      <circle class="node-pulse" cx="600" cy="320" r="8" fill="#38bdf8" />
+      <circle class="node-pulse" cx="840" cy="265" r="7" fill="#a855f7" />
+      <circle class="node-pulse" cx="1050" cy="275" r="8" fill="#34d399" />
+      
+      <circle class="node-pulse" cx="240" cy="145" r="6" fill="#c084fc" />
+      <circle class="node-pulse" cx="500" cy="75" r="7" fill="#818cf8" />
+      <circle class="node-pulse" cx="700" cy="120" r="8" fill="#38bdf8" />
+      <circle class="node-pulse" cx="950" cy="72" r="6" fill="#f43f5e" />
+    </g>
+  </g>
+
+  <!-- 5. Foreground Content Layer: Clear, Centered, Crisp Text & Badges -->
+  <g transform="translate(600, 185)">
+    <!-- Main Title -->
+    <text class="title-text" text-anchor="middle" y="-20" font-size="44" fill="url(#text-title)">
+      Awesome External Web Services &amp; API Connectors
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text class="subtitle-text" text-anchor="middle" y="24" font-size="20" fill="#94a3b8" letter-spacing="0.3">
+      The Curated Index of iPaaS Platforms, Self-Hosted Gateways &amp; Integration Runtimes
+    </text>
+
+    <!-- Feature Tags / Category Pills in Foreground -->
+    <g transform="translate(0, 68)">
+      <!-- Pill 1: iPaaS Orchestration -->
+      <g transform="translate(-400, 0)">
+        <rect x="-10" y="-16" width="180" height="32" rx="16" fill="#0f172a" stroke="#0284c7" stroke-width="1.5" />
+        <text class="pill-text" text-anchor="middle" x="80" y="5" fill="#38bdf8">⚡ iPaaS Orchestration</text>
+      </g>
+
+      <!-- Pill 2: Open Source Runtimes -->
+      <g transform="translate(-195, 0)">
+        <rect x="-10" y="-16" width="185" height="32" rx="16" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5" />
+        <text class="pill-text" text-anchor="middle" x="82" y="5" fill="#c084fc">🔓 Open Source Hubs</text>
+      </g>
+
+      <!-- Pill 3: API Gateways -->
+      <g transform="translate(15, 0)">
+        <rect x="-10" y="-16" width="170" height="32" rx="16" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
+        <text class="pill-text" text-anchor="middle" x="75" y="5" fill="#34d399">🛡️ API Gateways</text>
+      </g>
+
+      <!-- Pill 4: AI Agent Connectors -->
+      <g transform="translate(210, 0)">
+        <rect x="-10" y="-16" width="195" height="32" rx="16" fill="#0f172a" stroke="#f43f5e" stroke-width="1.5" />
+        <text class="pill-text" text-anchor="middle" x="87" y="5" fill="#fb7185">🤖 AI Agent Gateways</text>
+      </g>
+    </g>
+
+    <!-- Bottom Ecosystem Highlights -->
+    <text class="subtitle-text" text-anchor="middle" y="145" font-size="14" fill="#64748b" letter-spacing="0.8">
+      ENTERPRISE INTEGRATION PATTERNS • EVENT-DRIVEN AUTOMATION • MCP &amp; REST PROTOCOLS
+    </text>
+  </g>
+</svg>
