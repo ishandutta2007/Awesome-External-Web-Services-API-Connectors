@@ -58,9 +58,9 @@ Structurally, the sector exhibits **moderate-to-high fragmentation** rather than
 
 ## 🔓 Open-Source GitHub Projects
 
-*Curated list of self-hosted integration runtimes, community connector gateways, high-throughput API gateways, and developer API tools. Sorted in descending order by GitHub Stars.*
+*Curated list of self-hosted integration runtimes, community connector gateways, high-throughput API gateways, and developer API tools. Sorted in descending order by GitHub_Stars.*
 
-| Project | GitHub Stars | Description | Primary Languages & Ecosystem |
+| Project | GitHub_Stars | Description | Primary Languages & Ecosystem |
 |:---|:---|:---|:---|
 | **[n8n](https://github.com/n8n-io/n8n)** | [![Stars](https://img.shields.io/github/stars/n8n-io/n8n?style=social&color=white)](https://github.com/n8n-io/n8n/stargazers) | 🌟 **Fair-code visual workflow automation platform with 400+ native connectors.** Community edition is free forever and self-hostable with Docker or npm. Includes rich visual node designer, webhooks, sub-workflows, and built-in AI agent tools. | TypeScript / Node.js |
 | **[Hoppscotch](https://github.com/hoppscotch/hoppscotch)** | [![Stars](https://img.shields.io/github/stars/hoppscotch/hoppscotch?style=social&color=white)](https://github.com/hoppscotch/hoppscotch/stargazers) | ⚡ **Open-source, lightweight API development ecosystem and client.** Self-host on your own infrastructure with team workspaces, real-time WebSocket/SSE/MQTT/GraphQL support, and keyboard-first UI without cloud dependency. | TypeScript / Vue.js |
